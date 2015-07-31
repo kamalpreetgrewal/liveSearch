@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Search</title>
+    <script src = "../app/bower_components/angular/angular.min.js"></script>
+    <script src = "js/app.js"></script>
+    <script src = "js/controllers/maincontroller.js"></script>
+    <script src = "js/directives/studentInfo.js"></script>
+  </head>
+  <body ng-app="Search">
+    <div ng-controller="MainController" align="center">
+      <h2>{{ title }} </h2>
+      <input type="text" ng-model="keyword">
+      <div student-info ng-repeat="student in students | filter:keyword">
+      {{ student.firstName }} {{ student.lastName }}
+      </div>
+    </div>
+  </body>
+</html>
